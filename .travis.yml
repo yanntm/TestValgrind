@@ -10,7 +10,8 @@ addons:
 script:
   - g++-8 -std=c++17 -O0 -g3 -Wall -o main main.cpp
   - ./main
-  - valgrind --tool=memcheck --track-origins=yes --leak-check=full ./
+  - valgrind --tool=memcheck --track-origins=yes --leak-check=full ./main
+  
 
 
  
