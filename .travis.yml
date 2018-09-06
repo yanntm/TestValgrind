@@ -1,0 +1,16 @@
+language: cpp
+dist: trusty
+sudo: false
+
+addons:
+  apt:
+    sources: ['ubuntu-toolchain-r-test']  
+    packages: ['cgroup-bin','valgrind','g++-8', 'gcc-8']
+
+script:
+  - g++-8 -std=c++17 -O0 -g3 -Wall -o main main.cpp
+  - ./main
+  - valgrind --tool=memcheck --track-origins=yes --leak-check=full ./
+
+
+ 
