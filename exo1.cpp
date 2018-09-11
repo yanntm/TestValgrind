@@ -22,7 +22,7 @@ int main () {
 	cout << copy << length(copy) << endl;
 
 	// A ajouter dans un deuxieme temps
-
+	delete[] copy;
 
 	return 0;
 }
