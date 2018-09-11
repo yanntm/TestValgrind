@@ -11,9 +11,9 @@ script:
   - g++-8 -std=c++17 -O0 -g3 -Wall -o main main.cpp
   - ./main
   - valgrind --tool=memcheck --track-origins=yes --leak-check=full ./main
-  - g++-8 -std=c++1y -O0 -g3 -Wall -c -o "src/strutil.o" "../src/strutil.cpp"
-  - g++-8 -std=c++1y -O0 -g3 -Wall -c -o "src/exo1.o" "../src/exo1.cpp"
-  - g++-8  -o "td1"  ./src/exo1.o ./src/strutil.o
+  - g++-8 -std=c++1y -O0 -g3 -Wall -c -o "strutil.o" "strutil.cpp"
+  - g++-8 -std=c++1y -O0 -g3 -Wall -c -o "exo1.o" "exo1.cpp"
+  - g++-8  -o "td1"  exo1.o strutil.o
   - valgrind --tool=memcheck --track-origins=yes --leak-check=full ./td1
 
  
